@@ -1,0 +1,13 @@
+<div *ngFor="let fruit of fruits; index as i; odd as odd; even as even">
+  <div [ngClass]="{ odd: odd, even: even, sales: fruit.price < 100 }">
+    {{ fruit.name }} <b>{{ fruit.price }}</b>
+  </div>
+</div>
+<hr />
+<div *ngFor="let fruit of fruits">
+  <div *ngIf="fruit.price > 100">
+    {{ fruit.name | uppercase }} <b>{{ fruit.price }}</b>
+  </div>
+</div>
+<hr />
+<div>{{ time | date: 'medium' }}</div>
