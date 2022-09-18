@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.value = this.valueService.value
+    this.valueService.value$.subscribe(value1 => (this.value = value1))
   }
 
   decHandler() {

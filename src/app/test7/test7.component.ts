@@ -27,7 +27,7 @@ export class Test7Component implements OnInit {
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
-    this.value = this.valueService.value
+    this.valueService.value$.subscribe(value => (this.value = value))
   }
   addHandler() {
     this.valueService.add()
