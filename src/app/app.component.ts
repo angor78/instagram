@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ValueService } from '../services/ValueService'
+import { ValueService } from '../services/value.service'
 import { Observable } from 'rxjs'
 import { AmazingLoggerService } from '../services/amazing-logger.service'
 
