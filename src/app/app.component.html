@@ -1,39 +1,40 @@
-<div *ngIf="isLoading"><h1>Loading...</h1></div>
-<div *ngIf="!isLoading">
-  <h1>
-    {{ appTitle }}
-  </h1>
-  <hr />
-  <div>{{ user.name }}</div>
-  <button [disabled]="isAppLoading" (click)="changeTitleHandler()">send</button>
-  <div>{{ text }}</div>
-  <input (input)="changeTextHandler($event)" />
-  <input (keyup.enter)="changeTextHandler($event)" />
-  <div>{{ text }}</div>
-  <input (keyup.enter)="changeTextHandler($event)" [value]="text" />
-  <hr />
-  <div>{{ text2 }}</div>
-  <input type="text" [(ngModel)]="text2" />
-  <hr />
-  <inst-test1 [text2]="text2" [user]="user" (SendingGrade)="getGrade($event)"></inst-test1>
-  <div>math:{{ math }}</div>
-  <div>rus:{{ rus }}</div>
-  <hr />
-  <div>{{ users | json }}</div>
-  <hr />
-  <input type="text" [(ngModel)]="text3" />
-  <button (click)="addItem()">Add</button>
-  <div *ngFor="let el of users">{{ el }}</div>
-  <hr />
-  <div *ngFor="let lesson of lessons">
-    {{ lesson.title }}
-    <div *ngFor="let grade of lesson.grades">{{ grade.grade }}</div>
-  </div>
-</div>
-<inst-test2></inst-test2>
-<div>
-  <h1>{{ value }}</h1>
-  <button (click)="decHandler()">-</button>
-</div>
-<hr />
-<inst-test7></inst-test7>
+<!--<div *ngIf="isLoading"><h1>Loading...</h1></div>-->
+<!--<div *ngIf="!isLoading">-->
+<!--  <h1>-->
+<!--    {{ appTitle }}-->
+<!--  </h1>-->
+<!--  <hr />-->
+<!--  <div>{{ user.name }}</div>-->
+<!--  <button [disabled]="isAppLoading" (click)="changeTitleHandler()">send</button>-->
+<!--  <div>{{ text }}</div>-->
+<!--  <input (input)="changeTextHandler($event)" />-->
+<!--  <input (keyup.enter)="changeTextHandler($event)" />-->
+<!--  <div>{{ text }}</div>-->
+<!--  <input (keyup.enter)="changeTextHandler($event)" [value]="text" />-->
+<!--  <hr />-->
+<!--  <div>{{ text2 }}</div>-->
+<!--  <input type="text" [(ngModel)]="text2" />-->
+<!--  <hr />-->
+<!--  <inst-test1 [text2]="text2" [user]="user" (SendingGrade)="getGrade($event)"></inst-test1>-->
+<!--  <div>math:{{ math }}</div>-->
+<!--  <div>rus:{{ rus }}</div>-->
+<!--  <hr />-->
+<!--  <div>{{ users | json }}</div>-->
+<!--  <hr />-->
+<!--  <input type="text" [(ngModel)]="text3" />-->
+<!--  <button (click)="addItem()">Add</button>-->
+<!--  <div *ngFor="let el of users">{{ el }}</div>-->
+<!--  <hr />-->
+<!--  <div *ngFor="let lesson of lessons">-->
+<!--    {{ lesson.title }}-->
+<!--    <div *ngFor="let grade of lesson.grades">{{ grade.grade }}</div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<inst-test2></inst-test2>-->
+<!--<div>-->
+<!--  <h1>{{ value$ | async }}</h1>-->
+<!--  <button (click)="decHandler()">-</button>-->
+<!--</div>-->
+<!--<hr />-->
+<!--<inst-test7></inst-test7>-->
+<inst-todos></inst-todos>

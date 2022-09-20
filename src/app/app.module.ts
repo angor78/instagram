@@ -9,6 +9,8 @@ import { Test4Component } from './user/components/test4/test4.component'
 import { Test5Component } from './user/components/test5/test5.component'
 import { Test7Component } from './test7/test7.component'
 import { FormsModule } from '@angular/forms'
+import { TodosComponent } from './components/todos/todos.component'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { FormsModule } from '@angular/forms'
     Test4Component,
     Test5Component,
     Test7Component,
+    TodosComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ValueService } from '../services/ValueService'
+import { Observable } from 'rxjs'
+import { AmazingLoggerService } from '../services/amazing-logger.service'
 
 export interface IUser {
   age: number
@@ -55,8 +57,11 @@ export class AppComponent implements OnInit {
     },
   ]
   isLoading: boolean = true
-  value = 0
-  constructor(private valueService: ValueService) {
+  value$ = new Observable()
+  constructor(
+    private valueService: ValueService,
+    private amazingLoggerService: AmazingLoggerService
+  ) {
     setTimeout(() => {
       this.isAppLoading = false
       this.isLoading = false
@@ -81,10 +86,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.valueService.value$.subscribe(value1 => (this.value = value1))
+    this.value$ = this.valueService.value$
   }
 
   decHandler() {
     this.valueService.dec()
+    this.amazingLoggerService.log('remove 1', 'info')
   }
 }
